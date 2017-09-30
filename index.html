@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Follow Along Nav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="">kkk</a></li>
+        <li><a href="">tie Status</a></li>
+        <li><a href="">okay</a></li>
+        <li><a href="">fine Our History</a></li>
+        <li><a href="">do it  for Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <p>Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipisicing elit. Est <a href="">explicabo</a> unde natus necessitatibus esse obcaecati distinctio, aut itaque, qui vitae!</p>
+      <p>Aspernatur sapiente quae sint <a href="">soluta</a> modi, atque praesentium laborum pariatur earum <a href="">quaerat</a> cupiditate consequuntur facilis ullam dignissimos, aperiam quam veniam.</p>
+      <p>Cum ipsam quod, incidunt sit ex <a href="">tempore</a> placeat maxime <a href="">corrupti</a> possimus <a href="">veritatis</a> ipsum fugit recusandae est doloremque? Hic, <a href="">quibusdam</a>, nulla.</p>
+      <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur eveniet sunt quam provident sapiente dicta neque quod.</p>
+      <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a href="">odio</a>, distinctio magni impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
+    </div>
+
+  <script>
+    
+      const links =document.querySelectorAll('a');
+    const highelight =  document.createElement('span');
+     
+      highelight.classList.add('highlight');
+      document.body.append(highelight);
+  function highlightLink(){
+         const coordinates =this.getBoundingClientRect();
+      /// create you own coorrds as these were not compatible with scrolling of the window 
+      const cords ={
+          width:coordinates.width,
+          height:coordinates.height,
+          left:coordinates.left+window.scrollX,
+          top:coordinates.top+window.scrollY
+      };
+      console.log(this.getBoundingClientRect());
+    
+      highelight.style.width=''+cords.width+'px';
+      highelight.style.height=''+cords.height+'px';
+      highelight.style.transform='translate('+cords.left+'px, '+cords.top+'px)';
+  }
+    links.forEach(a=>a.addEventListener('mouseenter',highlightLink));
+      
+      
+    </script>
+    
+</body>
+</html>
+
